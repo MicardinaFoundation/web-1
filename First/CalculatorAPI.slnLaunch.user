@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "All",
+    "Projects": [
+      {
+        "Path": "CalculatorAPI\\CalculatorAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CalculatorWeb\\CalculatorWeb.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

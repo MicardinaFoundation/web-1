@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Web-service\\First\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|e:\\web-service\\first\\calculatorapi\\controllers\\calculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|solutionrelative:calculatorapi\\controllers\\calculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|e:\\web-service\\first\\calculatorapi\\models\\variantfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|solutionrelative:calculatorapi\\models\\variantfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\models\\variantfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\models\\variantfilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\views\\home\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|e:\\web-service\\first\\calculatorapi\\models\\varianteditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|solutionrelative:calculatorapi\\models\\varianteditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\views\\home\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\views\\home\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|e:\\web-service\\first\\calculatorapi\\models\\variantadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|solutionrelative:calculatorapi\\models\\variantadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|e:\\web-service\\first\\calculatorapi\\data\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7D0A10-05CB-4FB3-ABD7-E17C5CF04C83}|CalculatorAPI\\CalculatorAPI.csproj|solutionrelative:calculatorapi\\data\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|e:\\web-service\\first\\calculatorweb\\models\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7DD3B47-DB55-4A54-9341-66C81AAA9D09}|CalculatorWeb\\CalculatorWeb.csproj|solutionrelative:calculatorweb\\models\\variant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Web-service\\First\\CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 391,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VariantFilterDto.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Models\\VariantFilterDto.cs",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Models\\VariantFilterDto.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Models\\VariantFilterDto.cs",
+              "RelativeToolTip": "CalculatorWeb\\Models\\VariantFilterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T12:23:11.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CalculatorController.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Controllers\\CalculatorController.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Controllers\\CalculatorController.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Controllers\\CalculatorController.cs",
+              "RelativeToolTip": "CalculatorAPI\\Controllers\\CalculatorController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAowCAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:21:26.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CalculatorWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAF8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-17T10:05:12.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Edit.cshtml",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Views\\Home\\Edit.cshtml",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Edit.cshtml",
+              "RelativeToolTip": "CalculatorWeb\\Views\\Home\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-17T10:39:17.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Add.cshtml",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Views\\Home\\Add.cshtml",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Home\\Add.cshtml",
+              "RelativeToolTip": "CalculatorWeb\\Views\\Home\\Add.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-17T10:46:06.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CalculatorWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAD4vwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:53:31.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VariantFilterDto.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantFilterDto.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Models\\VariantFilterDto.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantFilterDto.cs",
+              "RelativeToolTip": "CalculatorAPI\\Models\\VariantFilterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T11:09:05.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VariantEditDto.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantEditDto.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Models\\VariantEditDto.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantEditDto.cs",
+              "RelativeToolTip": "CalculatorAPI\\Models\\VariantEditDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:20:10.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Variant.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Models\\Variant.cs",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Models\\Variant.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Models\\Variant.cs",
+              "RelativeToolTip": "CalculatorWeb\\Models\\Variant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:08:26.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20251017104001_migration-description-name-added.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs",
+              "RelativeToolTip": "CalculatorAPI\\Migrations\\20251017104001_migration-description-name-added.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:40:01.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CalculatorWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CalculatorWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-17T09:46:33.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Variant.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Data\\Variant.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Data\\Variant.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Data\\Variant.cs",
+              "RelativeToolTip": "CalculatorAPI\\Data\\Variant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:22:01.407Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 9,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VariantAddDto.cs",
+              "DocumentMoniker": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantAddDto.cs",
+              "RelativeDocumentMoniker": "CalculatorAPI\\Models\\VariantAddDto.cs",
+              "ToolTip": "E:\\Web-service\\First\\CalculatorAPI\\Models\\VariantAddDto.cs",
+              "RelativeToolTip": "CalculatorAPI\\Models\\VariantAddDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:19:42.89Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
