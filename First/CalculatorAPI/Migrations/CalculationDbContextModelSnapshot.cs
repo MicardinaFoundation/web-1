@@ -17,6 +17,24 @@ namespace CalculatorAPI.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.20");
 
+            modelBuilder.Entity("CalculatorAPI.Data.Cathegory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Cathegories")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("IdChanged")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cathegories");
+                });
+
             modelBuilder.Entity("CalculatorAPI.Data.Variant", b =>
                 {
                     b.Property<int>("Id")
@@ -29,6 +47,9 @@ namespace CalculatorAPI.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()

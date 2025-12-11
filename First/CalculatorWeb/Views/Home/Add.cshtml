@@ -1,4 +1,4 @@
-﻿@model List<CalculatorAPI.Data.Variant>
+﻿@model CalculatorAPI.Data.Data
 @{
     ViewData["Title"] = "Add new value";
 }
@@ -12,7 +12,34 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Group</label>
-            <input type="text" name="Name" value="" class="form-control" />
+            <select class="form-select" title="Contact group type" id="floatingSelect" name="Name">
+                @*                     <option value="1">One</option>*@
+                @{
+                    var a = Model;
+                    List<string> newData = Model.Cathegory
+                    .Select(p => p.Cathegories)
+                    .Distinct()
+                    .ToList();
+                    if (Model.Cathegory.Count > 0)
+                    {
+                        if (Model.Cathegory.Count > 1)
+                        {
+                            foreach (var data in newData)
+                            {
+                                <option value="@data">@data</option>
+                            }
+                            // for(int i = 0; i < Model.ToArray().Length; i++)
+                            // {
+                            //     <option value="@newData[i]">@newData[i]</option>
+                            // }
+                        }
+                        else
+                        {
+                            <option value="@newData[0]">@newData[0]</option>
+                        }
+                    }
+                }
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Number</label>

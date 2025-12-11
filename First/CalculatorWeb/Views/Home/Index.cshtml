@@ -1,26 +1,28 @@
-﻿@model List<CalculatorAPI.Data.Variant>
+﻿@model CalculatorAPI.Data.Data
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-start">
     <h1 class="display-4">Welcome around!</h1>
-    <p>Today fonded @Model.Count values<br /><br /><br /></p>
+    <p>Today fonded @Model.Variant.Count values<br /><br /><br /></p>
     <button class="btn btn-success" onclick="location.href = '/Home/Add'">Add</button>
+    <button class="btn btn-danger" onclick="location.href = '/Home/Cathegory'">Cathegory return</button>
     <br />
     <form method="post" class="row row-cols-lg-auto g-3 align-items-center">
         <div class="col-auto">
             <select class="form-select" title="Contact group type" id="floatingSelect" name="name">
-                <option value="All" selected>All Group</option>
+                <option value="-1" selected>All Group</option>
                 @*                     <option value="1">One</option>*@
                 @{
-                    List<string> newData = Model
-                    .Select(p => p.Name)
+                    var a = Model;
+                    List<string> newData = Model.Cathegory
+                    .Select(p => p.Cathegories)
                     .Distinct()
                     .ToList();
-                    if(Model.Count > 0)
+                    if(Model.Cathegory.Count > 0)
                     {
-                        if(Model.Count > 1)
+                        if (Model.Cathegory.Count > 1)
                         {
                             foreach (var data in newData)
                             {
@@ -45,9 +47,6 @@
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
-        <div class="col-auto">
-            <button class="btn btn-secondary">Reset filter</button>
-        </div>
     </form>
     <table class="table">
         <thead>
@@ -63,12 +62,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(var variant in Model)
+            @foreach (var variant in Model.Variant)
             {
                 <tr>
                     <td>@variant.Id</td>
-                    <td>@(variant.NamsName)</td>
-                    <td>@(!string.IsNullOrEmpty(variant.Name) ? variant.Name : "<NULL>")</td>
+                    <td>@(!string.IsNullOrEmpty(variant.NamsName) ? variant.NamsName : "<NULL>")</td>
+                    <td>@(Model.Cathegory[variant.GroupId].IdChanged == variant.GroupId ? Model.Cathegory[variant.GroupId].Cathegories : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.Numb.ToString()) ? variant.Numb : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.Description) ? variant.Description : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.CreatedAt.ToString()) ? variant.CreatedAt == DateTime.MinValue ? "NO ADD" : variant.CreatedAt : "<NULL>")</td>

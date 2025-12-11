@@ -1,4 +1,4 @@
-﻿@model CalculatorAPI.Data.Variant
+﻿@model CalculatorAPI.Data.Data
 @{
     ViewData["Title"] = "Edit value";
 }
@@ -6,26 +6,57 @@
 <div class="text-start">
     <h1 class="display-4">Edit!</h1>
     <form method="post">
-        <input type="hidden" name="Id" value="@Model.Id" />
+        <input type="hidden" name="Id" value="@Model.Varianto.Id" />
 @*         <div class="mb-3">
             <label class="form-label">Nameing</label>
             <input type="text" name="Name" value="@Model.Name" class="form-control" />
         </div>
  *@        <div class="mb-3">
             <label class="form-label">Name Contact</label>
-            <input type="text" name="NamsName" value="@Model.NamsName" class="form-control" />
+            <input type="text" name="NamsName" value="@Model.Varianto.NamsName" class="form-control" />
         </div>
         <div class="mb-3">
             <label class="form-label">Group</label>
-            <input type="text" name="Name" value="@Model.Name" class="form-control" />
+            <select class="form-select" title="Contact group type" id="floatingSelect" name="Name">
+                @*                     <option value="1">One</option>*@
+                @{
+                    var a = Model;
+                    List<string> newData = Model.Cathegory
+                    .Select(p => p.Cathegories)
+                    .Distinct()
+                    .ToList();
+                    if (Model.Cathegory.Count > 0)
+                    {
+                        if (Model.Cathegory.Count > 1)
+                        {
+                            foreach (var data in newData)
+                            {
+                                <option value="@data">@data</option>
+                            }
+                            // for(int i = 0; i < Model.ToArray().Length; i++)
+                            // {
+                            //     <option value="@newData[i]">@newData[i]</option>
+                            // }
+                        }
+                        else
+                        {
+                            <option value="@newData[0]">@newData[0]</option>
+                        }
+                    }
+                }
+            </select>
         </div>
+        @* <div class="mb-3"> *@
+        @*     <label class="form-label">Group</label> *@
+        @*     <input type="text" name="Name" value="@Model.Varianto.Name" class="form-control" /> *@
+        @* </div> *@
         <div class="mb-3">
             <label class="form-label">Number</label>
-            <input type="tel" name="Numb" value="@Model.Numb" class="form-control" />
+            <input type="tel" name="Numb" value="@Model.Varianto.Numb" class="form-control" />
         </div>
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <input type="text" name="Description" value="@Model.Description" class="form-control" />
+            <input type="text" name="Description" value="@Model.Varianto.Description" class="form-control" />
         </div>
 
 

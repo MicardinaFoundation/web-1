@@ -1,0 +1,50 @@
+﻿@model CalculatorAPI.Data.Data
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-start">
+    <h1 class="display-4">Welcome around!</h1>
+    <p>Today fonded @Model.Cathegory.Count values<br /><br /><br /></p>
+    <button class="btn btn-success" onclick="location.href = '/Home/AddCathegory'">Add</button>
+    <button class="btn btn-danger" onclick="location.href = '/Home/Index'">Index return</button>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Group</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var variant in Model.Cathegory)
+            {
+                if (variant.Id != 0)
+                {
+                    <tr>
+                        <td>@variant.Id</td>
+                        <td>@(variant.Cathegories)</td>
+                        <td><a href="/home/EditCathegory/@variant.Id">edit</a> <a href="/home/DeleteCategory/@variant.Id">delete</a></td>
+                    </tr>                    
+                }
+            }
+        </tbody>
+</table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+    <br />
+    <br />
+    <a class="btn btn-danger">Clear DB</a>
+</div>

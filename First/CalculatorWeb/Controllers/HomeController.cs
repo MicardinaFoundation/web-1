@@ -22,25 +22,44 @@ namespace CalculatorWeb.Controllers
             var httpClient = new HttpClient();
             var responce = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
 
-            var responseData = await responce.Content.ReadFromJsonAsync<List<Variant>>();
+            var responseData = await responce.Content.ReadFromJsonAsync<Data>();
+            
+
+            //ViewBag.Cathegories = 
 
             return View(responseData);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Cathegory()
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
+
+            var responseData = await responce.Content.ReadFromJsonAsync<Data>();
+
+
+            //ViewBag.Cathegories = 
+
+            return View(responseData);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> Index(VariantFilterDto model)
         {
             var httpClient = new HttpClient();
-            var responce = await httpClient.PostAsJsonAsync("http://127.0.0.1:10280/Calculator", model);
+            var responce = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
+            var responcea = await httpClient.PostAsJsonAsync("http://127.0.0.1:10280/Calculator", model);
 
 
-            if (!responce.IsSuccessStatusCode)
+            if (!responcea.IsSuccessStatusCode)
             {
                 return Redirect(nameof(Index));
             }
             else
             {
-                var responseData = await responce.Content.ReadFromJsonAsync<List<Variant>>();
+                var responseData = await responcea.Content.ReadFromJsonAsync<List<Variant>>();
 
                 //responce = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
                 //var s = await responce.Content.ReadFromJsonAsync<List<Variant>>();
@@ -53,7 +72,18 @@ namespace CalculatorWeb.Controllers
                 //a.Add(responseData);
                 //a.Add(d);
                 //return View(a);
-                return View(responseData);
+
+                var responseDataa = await responce.Content.ReadFromJsonAsync<Data>();
+
+                //responseDataa.Varianto = responseData;
+
+                Data data = new()
+                {
+                    Variant = responseData,
+                    Cathegory = responseDataa.Cathegory,
+                };
+
+                return View(data);
             }
 
         }
@@ -62,7 +92,14 @@ namespace CalculatorWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> Add()
         {
-            return View();
+            var httpClient = new HttpClient();
+
+            var responcea = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
+
+            var responseDataa = await responcea.Content.ReadFromJsonAsync<Data>();
+
+
+            return View(responseDataa);
         }
 
         [HttpPost]
@@ -77,28 +114,96 @@ namespace CalculatorWeb.Controllers
         }
         #endregion
 
+        #region - Add Cathegory -
+        [HttpGet]
+        public async Task<IActionResult> AddCathegory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCathegory([FromForm] CategoriesAddDto model)
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.PutAsJsonAsync($"http://127.0.0.1:10280/Calculator/AddCategories?name={model.Cathegories}", model);
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+                var responseData = await responce.Content.ReadFromJsonAsync<CategoriesAddDto>();
+            if (!responce.IsSuccessStatusCode)
+            {
+                _logger.LogError("FS{code}: {body}", responce.StatusCode, responseData);
+            }
+
+
+            return RedirectToAction(nameof(Cathegory));
+        }
+        #endregion
+
         #region - Edit -
 
-            [HttpGet]
-            public async Task<IActionResult> Edit(int id)
-            {
-                var httpClient = new HttpClient();
-                var responce = await httpClient.GetAsync($"http://127.0.0.1:10280/Calculator/{id}");
-                var responseData = await responce.Content.ReadFromJsonAsync<Variant>();
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.GetAsync($"http://127.0.0.1:10280/Calculator/{id}");
+            var responseData = await responce.Content.ReadFromJsonAsync<Variant>();
 
-                return View(responseData);
-            }
+            var responcea = await httpClient.GetAsync("http://127.0.0.1:10280/Calculator");
 
-            [HttpPost]
-            public async Task<IActionResult> Edit([FromForm] VariantEditDto model)
-            {
-                var httpClient = new HttpClient();
-                var responce = await httpClient.PatchAsJsonAsync("http://127.0.0.1:10280/Calculator", model);
+            var responseDataa = await responcea.Content.ReadFromJsonAsync<Data>();
 
-                var responseData = await responce.Content.ReadFromJsonAsync<Variant>();
+            responseDataa.Varianto = responseData;
 
-                return RedirectToAction(nameof(Index));
-            }
+            ViewBag.EditId = id;
+
+
+            return View(responseDataa);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit([FromForm] VariantEditDto model)
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.PatchAsJsonAsync("http://127.0.0.1:10280/Calculator", model);
+
+            var responseData = await responce.Content.ReadFromJsonAsync<Variant>();
+
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+
+        #region - Edit Cathegory-
+
+        [HttpGet]
+        public async Task<IActionResult> EditCathegory(int id)
+        {
+            var httpClient = new HttpClient();
+
+            var responcea = await httpClient.GetAsync($"http://127.0.0.1:10280/Calculator/CategorieView?id={id}");
+
+            var responseDataa = await responcea.Content.ReadFromJsonAsync<Cathegory>();
+
+
+            ViewBag.EditId = id;
+
+
+            return View(responseDataa);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditCathegory([FromForm] Cathegory model)
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.PatchAsJsonAsync("http://127.0.0.1:10280/Calculator/CategoriesPatch", model);
+
+            var responseData = await responce.Content.ReadFromJsonAsync<Cathegory>();
+
+            return RedirectToAction(nameof(Cathegory));
+        }
         #endregion
 
         [HttpGet]
@@ -108,6 +213,14 @@ namespace CalculatorWeb.Controllers
             var responce = await httpClient.DeleteAsync($"http://127.0.0.1:10280/Calculator?id={id}");
 
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var httpClient = new HttpClient();
+            var responce = await httpClient.DeleteAsync($"http://127.0.0.1:10280/Calculator/CategoriesDelete?id={id}");
+
+            return RedirectToAction(nameof(Cathegory));
         }
 
 

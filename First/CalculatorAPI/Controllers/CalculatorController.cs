@@ -28,20 +28,51 @@ namespace CalculatorAPI.Controllers
         [HttpPost]
         public IEnumerable<Variant> Post([FromBody] VariantFilterDto model)
         {
-            var data = _context.Variants
-                .Where(x => x.Name.Contains(string.IsNullOrEmpty(model.Name) ? "" : model.Name == "All" ? "" : model.Name))
-                .Where(s => s.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName))
-                .ToList();
+            if (model.Name != "-1")
+            {
+                var cat = _context.Cathegories
+                    .Where(i => i.Cathegories == model.Name)
+                    .ToList();
+                    
+                var data = _context.Variants
+                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    .Where(s => s.GroupId == cat[0].IdChanged)
+                    .ToList();
+                return data;
+
+            }
+            else
+            {
+                var data = _context.Variants
+                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    .ToList();
+                return data;
 
 
-            return data;
+            }
+
+
         }
 
         [HttpGet]
-        public IEnumerable<Variant> Get()
+        public Datas Get()
         {
-            var data = _context.Variants.ToList();
-            return data;
+            Datas a = new Datas();
+            a.Variant = _context.Variants.ToList();
+            a.Cathegory = _context.Cathegories.ToList();
+
+            var d = a.Cathegory;
+            for (int i = 0; i < d.Count; i++)
+            {
+                d[i].IdChanged = i;
+                _context.Cathegories.Update(d[i]);
+                _context.SaveChanges();
+            }
+
+            a.Cathegory = d;
+
+
+            return a;
         }
 
         [HttpGet("{id}")]
@@ -52,17 +83,77 @@ namespace CalculatorAPI.Controllers
             return data;
         }
 
-        [HttpOptions]
-        public List<string> GetList()
+
+
+        [HttpGet("CategoriesList")]
+        public IEnumerable<Cathegory> GetList()
         {
-            var data = _context.Variants
-                .Select(x => x.Name)
-                .Distinct()
+            var data = _context.Cathegories
                 .ToList();
 
 
             return data;
         }
+        [HttpGet("CategorieView")]
+        public Cathegory GetCathg(int id)
+        {
+            var data = _context.Cathegories.FirstOrDefault(x => x.Id == id);
+
+
+            return data;
+        }
+        /// <summary>
+        /// Добавляет категорию
+        /// </summary>
+        /// <param name="nameCathegories"></param>
+        /// <returns></returns>
+        [HttpPut("AddCategories")]
+        public Cathegory Put(string name)
+        {
+            var data = new Cathegory()
+            {
+                Cathegories = name,
+            };
+            _context.Cathegories.Add(data);
+            _context.SaveChanges();
+            return data;
+        }
+        [HttpPatch("CategoriesPatch")]
+        public IActionResult EditListCathegories([FromBody] Cathegory cathegory)
+        {
+            var variant = _context.Cathegories.FirstOrDefault(x => x.Id == cathegory.Id);
+
+            if (variant == null)
+                return NotFound();
+
+
+            variant.Cathegories = cathegory.Cathegories;
+
+            _context.Cathegories.Update(variant);
+            _context.SaveChanges();
+
+            return new JsonResult(variant);
+        }
+
+        [HttpDelete("CategoriesDelete")]
+        public IActionResult DeleteListCathegories(int id)
+        {
+            var variant = _context.Cathegories.FirstOrDefault(x => x.Id == id);
+
+
+            if (variant == null)
+                return NotFound();
+
+            if (id <= 0 || _context.Cathegories.ToList().Count <= 1) return NotFound();
+
+
+            _context.Cathegories.Remove(variant);
+            _context.SaveChanges();
+
+            return Ok();
+        }
+
+
 
 
 
@@ -83,14 +174,18 @@ namespace CalculatorAPI.Controllers
 
 
 
+
         [HttpPut]
         public Variant Put([FromBody] VariantAddDto model)
         {
+            var cathegotysz = _context.Cathegories.FirstOrDefault(x => x.Cathegories == model.Name);
+
             var variant = new Variant()
             {
+                GroupId = cathegotysz.IdChanged,
                 NamsName = model.NamsName,
-                Name = model.Name,
                 Numb = model.Numb,
+                Name = "",
                 Description = model.Description,
                 CreatedAt = DateTime.Now
             };
@@ -107,7 +202,10 @@ namespace CalculatorAPI.Controllers
             if (variant == null)
                 return NotFound();
 
+            var cathegotysz = _context.Cathegories.FirstOrDefault(x => x.Cathegories == model.Name);
+
             variant.NamsName = model.NamsName;
+            variant.GroupId = cathegotysz.IdChanged;
             variant.Name = model.Name;
             variant.Numb = model.Numb;
             variant.Description = model.Description;

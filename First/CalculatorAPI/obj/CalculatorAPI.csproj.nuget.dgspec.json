@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Web-service\\First\\CalculatorAPI\\CalculatorAPI.csproj": {}
+    "E:\\Web-service\\web-1\\First\\CalculatorAPI\\CalculatorAPI.csproj": {}
   },
   "projects": {
-    "E:\\Web-service\\First\\CalculatorAPI\\CalculatorAPI.csproj": {
+    "E:\\Web-service\\web-1\\First\\CalculatorAPI\\CalculatorAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Web-service\\First\\CalculatorAPI\\CalculatorAPI.csproj",
+        "projectUniqueName": "E:\\Web-service\\web-1\\First\\CalculatorAPI\\CalculatorAPI.csproj",
         "projectName": "CalculatorAPI",
-        "projectPath": "E:\\Web-service\\First\\CalculatorAPI\\CalculatorAPI.csproj",
+        "projectPath": "E:\\Web-service\\web-1\\First\\CalculatorAPI\\CalculatorAPI.csproj",
         "packagesPath": "C:\\Users\\Msk\\.nuget\\packages\\",
-        "outputPath": "E:\\Web-service\\First\\CalculatorAPI\\obj\\",
+        "outputPath": "E:\\Web-service\\web-1\\First\\CalculatorAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
