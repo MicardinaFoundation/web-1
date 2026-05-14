@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5d4f1643-d3f6-43d0-9793-5af594cbcdfb")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CalculatorAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49014ed4c291408a6c6bf95106273cf174b64aed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ca65479bf50f197f77f11d116cf7434b2da558d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CalculatorAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CalculatorAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

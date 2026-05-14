@@ -410,3 +410,11 @@ E:\Web-service\web-1\First\CalculatorAPI\obj\Debug\net8.0\refint\CalculatorAPI.d
 E:\Web-service\web-1\First\CalculatorAPI\obj\Debug\net8.0\CalculatorAPI.pdb
 E:\Web-service\web-1\First\CalculatorAPI\obj\Debug\net8.0\CalculatorAPI.genruntimeconfig.cache
 E:\Web-service\web-1\First\CalculatorAPI\obj\Debug\net8.0\ref\CalculatorAPI.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\Web-service\web-1\First\CalculatorAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

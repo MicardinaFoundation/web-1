@@ -1,0 +1,12 @@
+services:
+  student-app-api:
+    container_name: student-app-api
+    restart: always
+    build: .
+    ports: 
+      - "127.0.0.1:10280:10280"
+    networks: 
+      - studentnet
+networks:
+  studentnet:
+    name: studentnet

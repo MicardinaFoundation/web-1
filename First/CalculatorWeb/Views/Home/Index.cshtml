@@ -66,8 +66,9 @@
             {
                 <tr>
                     <td>@variant.Id</td>
+                    <td>@(!string.IsNullOrEmpty(variant.Name) ? variant.Name : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.NamsName) ? variant.NamsName : "<NULL>")</td>
-                    <td>@(Model.Cathegory[variant.GroupId].IdChanged == variant.GroupId ? Model.Cathegory[variant.GroupId].Cathegories : "<NULL>")</td>
+                    <td>@(variant.GroupId < Model.Cathegory.Count ? Model.Cathegory[variant.GroupId].Cathegories : $"<NULL GROUP FOR THIS ID> | <ID = {variant.GroupId}> <{variant.Name}>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.Numb.ToString()) ? variant.Numb : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.Description) ? variant.Description : "<NULL>")</td>
                     <td>@(!string.IsNullOrEmpty(variant.CreatedAt.ToString()) ? variant.CreatedAt == DateTime.MinValue ? "NO ADD" : variant.CreatedAt : "<NULL>")</td>

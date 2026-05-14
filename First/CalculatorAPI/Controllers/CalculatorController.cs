@@ -2,12 +2,14 @@ using System.Collections.Generic;
 using System.Linq;
 using CalculatorAPI.Data;
 using CalculatorAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalculatorAPI.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CalculatorController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -28,14 +30,20 @@ namespace CalculatorAPI.Controllers
         [HttpPost]
         public IEnumerable<Variant> Post([FromBody] VariantFilterDto model)
         {
-            if (model.Name != "-1")
+
+            var cat = _context.Cathegories
+                .Where(i => i.IdChanged == model.GroupId)
+                .ToList();
+            if (model.GroupId != -1)
             {
-                var cat = _context.Cathegories
-                    .Where(i => i.Cathegories == model.Name)
-                    .ToList();
-                    
+                //var cat = _context.Cathegories
+                //    .Where(i => i.Cathegories == model.Name)
+                //    .ToList();
+
                 var data = _context.Variants
-                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    //.Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName))
+                    .Where(x => x.Name.Contains(string.IsNullOrEmpty(model.Name) ? "" : model.Name))
                     .Where(s => s.GroupId == cat[0].IdChanged)
                     .ToList();
                 return data;
@@ -44,7 +52,9 @@ namespace CalculatorAPI.Controllers
             else
             {
                 var data = _context.Variants
-                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    //.Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName == "All" ? "" : model.NamsName))
+                    .Where(x => x.NamsName.Contains(string.IsNullOrEmpty(model.NamsName) ? "" : model.NamsName))
+                    .Where(x => x.Name.Contains(string.IsNullOrEmpty(model.Name) ? "" : model.Name))
                     .ToList();
                 return data;
 
@@ -55,6 +65,7 @@ namespace CalculatorAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public Datas Get()
         {
             Datas a = new Datas();
@@ -73,6 +84,26 @@ namespace CalculatorAPI.Controllers
 
 
             return a;
+        }
+
+        [HttpGet("GetVariant")]
+        public List<Variant> GetVariant()
+        {
+            //Variant a = new Variant();
+            //a = _context.Variants.ToList();
+
+            //var d = a.Cathegory;
+            //for (int i = 0; i < d.Count; i++)
+            //{
+            //    d[i].IdChanged = i;
+            //    _context.Cathegories.Update(d[i]);
+            //    _context.SaveChanges();
+            //}
+
+            //a.Cathegory = d;
+
+
+            return _context.Variants.ToList();
         }
 
         [HttpGet("{id}")]
@@ -123,7 +154,7 @@ namespace CalculatorAPI.Controllers
         {
             var variant = _context.Cathegories.FirstOrDefault(x => x.Id == cathegory.Id);
 
-            if (variant == null)
+            if (variant == null || variant.IdChanged == -1)
                 return NotFound();
 
 
@@ -141,7 +172,7 @@ namespace CalculatorAPI.Controllers
             var variant = _context.Cathegories.FirstOrDefault(x => x.Id == id);
 
 
-            if (variant == null)
+            if (variant == null || variant.IdChanged == -1)
                 return NotFound();
 
             if (id <= 0 || _context.Cathegories.ToList().Count <= 1) return NotFound();
@@ -182,11 +213,30 @@ namespace CalculatorAPI.Controllers
 
             var variant = new Variant()
             {
-                GroupId = cathegotysz.IdChanged,
+                GroupId = cathegotysz == null ? model.GroupId : cathegotysz.IdChanged,
                 NamsName = model.NamsName,
                 Numb = model.Numb,
-                Name = "",
+                Name = model.Name,
                 Description = model.Description,
+                CreatedAt = DateTime.Now
+            };
+            _context.Variants.Add(variant);
+            _context.SaveChanges();
+            return variant;
+        }
+        [HttpPut("DiplicateVariant{id}")]
+        public Variant Diplicate(int id)
+        {
+
+            var oldVariant = _context.Variants.FirstOrDefault(x => x.Id == id);
+            if (oldVariant == null) return null;
+            var variant = new Variant()
+            {
+                GroupId = oldVariant.GroupId,
+                NamsName = oldVariant.NamsName,
+                Numb = oldVariant.Numb,
+                Name = oldVariant.Name,
+                Description = oldVariant.Description,
                 CreatedAt = DateTime.Now
             };
             _context.Variants.Add(variant);
@@ -205,7 +255,8 @@ namespace CalculatorAPI.Controllers
             var cathegotysz = _context.Cathegories.FirstOrDefault(x => x.Cathegories == model.Name);
 
             variant.NamsName = model.NamsName;
-            variant.GroupId = cathegotysz.IdChanged;
+            //variant.GroupId = cathegotysz.IdChanged;
+            variant.GroupId = cathegotysz == null ? model.GroupId : cathegotysz.IdChanged;
             variant.Name = model.Name;
             variant.Numb = model.Numb;
             variant.Description = model.Description;

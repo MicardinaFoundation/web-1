@@ -1,8 +1,34 @@
 [
   {
+    "ContainingType": "CalculatorAPI.Controllers.AuthController",
+    "Method": "Index",
+    "RelativePath": "api/Auth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "CalculatorAPI.Models.AuthRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CalculatorAPI.Models.AuthResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Post",
-    "RelativePath": "Calculator",
+    "RelativePath": "api/Calculator",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +54,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Get",
-    "RelativePath": "Calculator",
+    "RelativePath": "api/Calculator",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -48,7 +74,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Delete",
-    "RelativePath": "Calculator",
+    "RelativePath": "api/Calculator",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -64,7 +90,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Put",
-    "RelativePath": "Calculator",
+    "RelativePath": "api/Calculator",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -90,7 +116,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Patch",
-    "RelativePath": "Calculator",
+    "RelativePath": "api/Calculator",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -106,7 +132,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Get",
-    "RelativePath": "Calculator/{id}",
+    "RelativePath": "api/Calculator/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -132,7 +158,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "Put",
-    "RelativePath": "Calculator/AddCategories",
+    "RelativePath": "api/Calculator/AddCategories",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -158,7 +184,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "DeleteListCathegories",
-    "RelativePath": "Calculator/CategoriesDelete",
+    "RelativePath": "api/Calculator/CategoriesDelete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -174,7 +200,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "GetList",
-    "RelativePath": "Calculator/CategoriesList",
+    "RelativePath": "api/Calculator/CategoriesList",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -194,7 +220,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "EditListCathegories",
-    "RelativePath": "Calculator/CategoriesPatch",
+    "RelativePath": "api/Calculator/CategoriesPatch",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -210,7 +236,7 @@
   {
     "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
     "Method": "GetCathg",
-    "RelativePath": "Calculator/CategorieView",
+    "RelativePath": "api/Calculator/CategorieView",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -224,6 +250,52 @@
     "ReturnTypes": [
       {
         "Type": "CalculatorAPI.Data.Cathegory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
+    "Method": "Diplicate",
+    "RelativePath": "api/Calculator/DiplicateVariant{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CalculatorAPI.Data.Variant",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CalculatorAPI.Controllers.CalculatorController",
+    "Method": "GetVariant",
+    "RelativePath": "api/Calculator/GetVariant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[CalculatorAPI.Data.Variant, CalculatorAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -1,11 +1,59 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "CalculatorAPI",
-    "version": "1.0"
+    "title": "My API",
+    "version": "v1"
   },
   "paths": {
-    "/Calculator": {
+    "/api/Auth": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Calculator": {
       "post": {
         "tags": [
           "Calculator"
@@ -184,7 +232,45 @@
         }
       }
     },
-    "/Calculator/{id}": {
+    "/api/Calculator/GetVariant": {
+      "get": {
+        "tags": [
+          "Calculator"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Variant"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Variant"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Variant"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Calculator/{id}": {
       "get": {
         "tags": [
           "Calculator"
@@ -224,7 +310,7 @@
         }
       }
     },
-    "/Calculator/CategoriesList": {
+    "/api/Calculator/CategoriesList": {
       "get": {
         "tags": [
           "Calculator"
@@ -262,7 +348,7 @@
         }
       }
     },
-    "/Calculator/CategorieView": {
+    "/api/Calculator/CategorieView": {
       "get": {
         "tags": [
           "Calculator"
@@ -301,7 +387,7 @@
         }
       }
     },
-    "/Calculator/AddCategories": {
+    "/api/Calculator/AddCategories": {
       "put": {
         "tags": [
           "Calculator"
@@ -339,7 +425,7 @@
         }
       }
     },
-    "/Calculator/CategoriesPatch": {
+    "/api/Calculator/CategoriesPatch": {
       "patch": {
         "tags": [
           "Calculator"
@@ -370,7 +456,7 @@
         }
       }
     },
-    "/Calculator/CategoriesDelete": {
+    "/api/Calculator/CategoriesDelete": {
       "delete": {
         "tags": [
           "Calculator"
@@ -391,10 +477,74 @@
           }
         }
       }
+    },
+    "/api/Calculator/DiplicateVariant{id}": {
+      "put": {
+        "tags": [
+          "Calculator"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Variant"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Variant"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Variant"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AuthRequest": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Cathegory": {
         "type": "object",
         "properties": {
@@ -548,6 +698,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Please insert JWT with Bearer into field",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
